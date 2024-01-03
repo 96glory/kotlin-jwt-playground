@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  mariadb:
+    image: mariadb:10
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb:/var/lib/mysql
+    user: mysql
+    environment:
+      MARIADB_ROOT_PASSWORD: 1234
+      MARIADB_DATABASE: kotlinjwt
+      TZ: Asia/Seoul
+    restart: always
